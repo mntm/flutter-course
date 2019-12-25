@@ -11,7 +11,7 @@ void main() {
         ),
         body: Center(
           child: Image(
-              image: NetworkImage("proto://url.to.the/image.png"),
+              image: AssetImage('images/diamond.png'),
             ),
         ),
       ),
