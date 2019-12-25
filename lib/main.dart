@@ -3,6 +3,9 @@ import "package:flutter/material.dart";
 void main() {
   runApp(
     MaterialApp(
+      // The Scaffold widget permits us to add appbars 
+      // and other material widget (FAB) in our application.
+      // It is the equivalent of CoordinatorLayout on android.
       home: Scaffold(
         backgroundColor: Colors.blueGrey,
         appBar: AppBar(
