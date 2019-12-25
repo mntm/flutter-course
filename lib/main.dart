@@ -11,6 +11,7 @@ void main() {
         ),
         body: Center(
           child: Image(
+              // This feeds the widget with an image bundled with the app
               image: AssetImage('images/diamond.png'),
             ),
         ),
