@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
 
-// With dart when a function (or method) contains only one instruction,
+// With dart, when a function (or method) contains only one instruction,
 // we can use the so called 'fat arrow' (=>) to shorten its declaration
 void main() => runApp(MyApp());
 
