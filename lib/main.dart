@@ -17,15 +17,35 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.teal,
         body: SafeArea(
-          child: Container(
-            width: 100.0,
-            height: 100.0,
-            margin: EdgeInsets.all(50),
-            padding: EdgeInsets.only(left: 20, top: 20),
-            color: Colors.white,
-            child: Text(
-              'Hello',
-            ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[    
+              // Containers tends to take the maximum space available when empty. 
+              // Hence the unnecessity to assign height to infinity           
+              Container(
+                width: 100.0,
+                color: Colors.red,
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Container(
+                    color: Colors.yellow,
+                    width: 100.0,
+                    height: 100.0,
+                  ),
+                  Container(
+                    color: Colors.green,
+                    width: 100.0,
+                    height: 100.0,
+                  ),
+                ],
+              ),
+              Container(
+                width: 100.0,
+                color: Colors.blue,
+              ),
+            ],
           ),
         ),
       ),
