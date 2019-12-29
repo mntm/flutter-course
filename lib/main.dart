@@ -17,14 +17,7 @@ class MyApp extends StatelessWidget {
       // The Scaffold widget permits us to add appbars
       // and other material widget (FAB) in our application.
       // It is the equivalent of CoordinatorLayout on android.
-      home: Scaffold(
-        backgroundColor: Colors.blue,
-        appBar: AppBar(
-          title: Text('Ask me anything!'),
-          backgroundColor: Colors.blue.shade900,
-        ),
-        body: BallPage(),
-      ),
+      home: BallPage(),
     );
   }
 }
