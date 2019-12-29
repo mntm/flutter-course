@@ -1,5 +1,7 @@
 import "package:flutter/material.dart";
 
+import "./dice_page.dart";
+
 // With dart, when a function (or method) contains only one instruction,
 // we can use the so called 'fat arrow' (=>) to shorten its declaration
 void main() => runApp(MyApp());
@@ -15,15 +17,13 @@ class MyApp extends StatelessWidget {
       // and other material widget (FAB) in our application.
       // It is the equivalent of CoordinatorLayout on android.
       home: Scaffold(
+        backgroundColor: Colors.red,
         appBar: AppBar(
-          title: Text('I am poor'),
-          backgroundColor: Colors.deepPurple[800],
+          title: Text('Dicee'),
+          backgroundColor: Colors.red,
         ),
-        body: Center(
-          child: Image(
-            // This feeds the widget with an image bundled with the app
-            image: AssetImage('images/fb_poop_icon.png'),
-          ),
+        body: SafeArea(
+          child: DicePage(),
         ),
       ),
     );
