@@ -44,12 +44,16 @@ class MyApp extends StatelessWidget {
               SizedBox(
                 height: 25.0,
                 width: 150.0,
+                // The divider draw a line of 1px thick horizontaly
                 child: Divider(
                   color: Colors.teal.shade100,
                 ),
               ),
               Card(
                 margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+                // ListTile is a widget commonly used with cards.
+                // It display a Leading/Trailing widget (such as Icon),
+                // with a Title and Subtitle (optional)
                 child: ListTile(
                   leading: Icon(Icons.phone, color: Colors.teal),
                   title: Text(
