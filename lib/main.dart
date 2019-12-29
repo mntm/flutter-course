@@ -17,15 +17,13 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.teal,
         body: SafeArea(
-          child: Container(
-            width: 100.0,
-            height: 100.0,
-            margin: EdgeInsets.all(50),
-            padding: EdgeInsets.only(left: 20, top: 20),
-            color: Colors.white,
-            child: Text(
-              'Hello',
-            ),
+          child: Column(
+            children:<Widget>[
+              CircleAvatar(
+                backgroundImage: AssetImage('images/portrait_3_4.jpg'),
+                radius: 50.0,
+              ),
+            ],
           ),
         ),
       ),
