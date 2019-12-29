@@ -18,10 +18,27 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.teal,
         body: SafeArea(
           child: Column(
-            children:<Widget>[
+            children: <Widget>[
               CircleAvatar(
                 backgroundImage: AssetImage('images/portrait_3_4.jpg'),
                 radius: 50.0,
+              ),
+              Text(
+                'Tsiry Marcel',
+                style: TextStyle(
+                    fontSize: 42.0,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'DejaVu Sans'),
+              ),
+              Text(
+                'MOBILE DEVELOPER',
+                style: TextStyle(
+                    color: Colors.teal[100],
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20.0,
+                    letterSpacing: 1.25,
+                    fontFamily: 'Source Code Pro'),
               ),
             ],
           ),
