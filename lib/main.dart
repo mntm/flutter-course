@@ -11,20 +11,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // The Scaffold widget permits us to add appbars
-      // and other material widget (FAB) in our application.
-      // It is the equivalent of CoordinatorLayout on android.
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('I am poor'),
-          backgroundColor: Colors.deepPurple[800],
-        ),
-        body: Center(
-          child: Image(
-            // This feeds the widget with an image bundled with the app
-            image: AssetImage('images/fb_poop_icon.png'),
-          ),
-        ),
+      // SafeArea draws its child on a safe area. Sa that it doesn't bleed.
+      home: SafeArea(
+        child: null
       ),
     );
   }
