@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 
+import "./xylophone_page.dart";
 // With dart, when a function (or method) contains only one instruction,
 // we can use the so called 'fat arrow' (=>) to shorten its declaration
 void main() => runApp(MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       // SafeArea draws its child on a safe area. Sa that it doesn't bleed.
       home: SafeArea(
-        child: null
+        child: XylophonePage(),
       ),
     );
   }
