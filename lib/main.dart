@@ -1,5 +1,8 @@
 import "package:flutter/material.dart";
 
+import "./ball_page.dart";
+
+
 // With dart, when a function (or method) contains only one instruction,
 // we can use the so called 'fat arrow' (=>) to shorten its declaration
 void main() => runApp(MyApp());
@@ -15,16 +18,12 @@ class MyApp extends StatelessWidget {
       // and other material widget (FAB) in our application.
       // It is the equivalent of CoordinatorLayout on android.
       home: Scaffold(
+        backgroundColor: Colors.blue,
         appBar: AppBar(
-          title: Text('I am poor'),
-          backgroundColor: Colors.deepPurple[800],
+          title: Text('Ask me anything!'),
+          backgroundColor: Colors.blue.shade900,
         ),
-        body: Center(
-          child: Image(
-            // This feeds the widget with an image bundled with the app
-            image: AssetImage('images/fb_poop_icon.png'),
-          ),
-        ),
+        body: BallPage(),
       ),
     );
   }
