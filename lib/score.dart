@@ -1,35 +1,61 @@
 import "package:flutter/material.dart";
 
-const BooleanScore positiveScore = const BooleanScore(score: true,);
-const BooleanScore negativeScore = const BooleanScore(score: false,);
+const BooleanScoreWidget positiveScore = const BooleanScoreWidget(
+  score: true,
+);
+const BooleanScoreWidget negativeScore = const BooleanScoreWidget(
+  score: false,
+);
 
-abstract class Score extends StatelessWidget {
-  const Score({Key key}) : super(key: key);
+abstract class ScoreWidget extends StatelessWidget {
+  const ScoreWidget({Key key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) ;
+  Widget build(BuildContext context);
 }
 
-class NumericScore extends Score{
+class NumericScoreWidget extends ScoreWidget {
   final int score;
+  final TextStyle style;
 
-  const NumericScore({Key key,@required this.score}) : super(key: key);
-  
+  const NumericScoreWidget({Key key, @required this.score, this.style})
+      : super(key: key);
+
   @override
   Widget build(BuildContext context) {
+    TextStyle fontSettedStyle = DefaultTextStyle.of(context).style.merge(
+          TextStyle(
+            fontFamily: 'DS-Digital',
+          ),
+        );
 
-    return null;
+    return Text(
+      score.toString(),
+      textAlign: TextAlign.end,
+      style: fontSettedStyle.merge(this.style),
+    );
   }
 }
 
-class BooleanScore extends Score{
+class BooleanScoreWidget extends ScoreWidget {
   final bool score;
+  final double size;
+  final Color color;
 
-  const BooleanScore({Key key,@required this.score}) : super(key: key);
+  const BooleanScoreWidget({Key key, @required this.score, this.size, this.color})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final IconThemeData iconTheme = IconTheme.of(context);
 
-    return null;
+    final double iconSize = size ?? iconTheme.size;
+    final Color iconColor = color ?? (this.score) ? Colors.green : Colors.red;
+
+    return Icon(
+      this.score == true ? Icons.check : Icons.close,
+      size: iconSize,
+      color: iconColor,
+    );
   }
 }

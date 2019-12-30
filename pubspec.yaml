@@ -1,4 +1,4 @@
-name: iamrich
+name: Quizzler
 description: A new Flutter project.
 
 # The following defines the version and build number for your application.
@@ -59,7 +59,7 @@ flutter:
   fonts:
     - family: DS-Digital
       fonts:
-        - asset: fonts/DS-DIGI.ttf
+        - asset: fonts/DS-DIGI.TTF
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
