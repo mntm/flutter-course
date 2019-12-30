@@ -1,8 +1,29 @@
 import "package:flutter/material.dart";
 
-class QuizzPage extends StatelessWidget {
-  const QuizzPage({Key key}) : super(key: key);
+class Quizzler extends StatefulWidget {
+  Quizzler({Key key}) : super(key: key);
 
+  @override
+  _QuizzlerState createState() => _QuizzlerState();
+}
+
+class _QuizzlerState extends State<Quizzler> {
+
+  List<Icon> scoreKeeper = [];
+
+  List<String> questions = [
+    'You can lead a cow down stairs but not up stairs.',
+    'You can lead a cow down stairs but not up stairs.',
+    'A slug\'s blood is green.'
+  ];
+
+  int currentQuestion = 0;
+
+  void nextQuestion(){
+    setState((){
+      currentQuestion = (currentQuestion + 1) % 3;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -16,8 +37,7 @@ class QuizzPage extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Center(
-              child: Text(
-                'This is where the question text will go.',
+              child: Text( questions[currentQuestion],
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
@@ -32,7 +52,9 @@ class QuizzPage extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: FlatButton(
               color: Colors.green,
-              onPressed: () {},
+              onPressed: () {
+                nextQuestion();
+              },
               child: Text(
                 'True',
                 style: TextStyle(
@@ -48,7 +70,9 @@ class QuizzPage extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: FlatButton(
               color: Colors.red,
-              onPressed: () {},
+              onPressed: () {
+                nextQuestion();
+              },
               child: Text(
                 'False',
                 style: TextStyle(
