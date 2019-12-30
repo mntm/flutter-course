@@ -43,8 +43,7 @@ class _StoryPageState extends State<StoryPage> {
               Expanded(
                 flex: 12,
                 child: Center(
-                  child: Text(
-                    
+                  child: Text(                    
                     storyBrain.getStory(),
                     style: TextStyle(
                       fontSize: 25.0,
