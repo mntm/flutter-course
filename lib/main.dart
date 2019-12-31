@@ -1,30 +1,33 @@
-import "package:flutter/material.dart";
+import 'package:flutter/material.dart';
 
-// With dart, when a function (or method) contains only one instruction,
-// we can use the so called 'fat arrow' (=>) to shorten its declaration
-void main() => runApp(MyApp());
+void main() => runApp(BMICalculator());
 
-// To be able to use hot reload and hot restart,
-// we need to declare the application as a Widget.
-// So that flutter could track the change made to the app
-class MyApp extends StatelessWidget {
+class BMICalculator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // The Scaffold widget permits us to add appbars
-      // and other material widget (FAB) in our application.
-      // It is the equivalent of CoordinatorLayout on android.
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('I am poor'),
-          backgroundColor: Colors.deepPurple[800],
-        ),
-        body: Center(
-          child: Image(
-            // This feeds the widget with an image bundled with the app
-            image: AssetImage('images/fb_poop_icon.png'),
-          ),
-        ),
+      home: InputPage(),
+    );
+  }
+}
+
+class InputPage extends StatefulWidget {
+  @override
+  _InputPageState createState() => _InputPageState();
+}
+
+class _InputPageState extends State<InputPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('BMI CALCULATOR'),
+      ),
+      body: Center(
+        child: Text('Body Text'),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
       ),
     );
   }
