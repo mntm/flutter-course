@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 import "./score_keeper.dart";
 import "./quiz_brain.dart";
@@ -33,14 +34,32 @@ class _QuizzlerState extends State<Quizzler> {
             ),
           ),
         ),
-        buildButton(color: Colors.green, text: 'True'),
-        buildButton(color: Colors.red, text: 'False'),
+        _buildButton(color: Colors.green, text: 'True', context: context),
+        _buildButton(color: Colors.red, text: 'False', context: context),
         ScoreKeeperWidget(scores: quizBrain.getRecordedAnswer()),
       ],
     );
   }
 
-  Expanded buildButton({Color color, String text}) {
+  void _buildAlertDialog(BuildContext context) {
+    Alert(
+      context: context,
+      title: "Quizzler",
+      type: AlertType.info,
+      desc: "You finished our Quiz",
+      buttons: [
+        DialogButton(
+            child: Text("Reset"),
+            onPressed: () {
+              quizBrain.resetQuiz();
+              Navigator.pop(context);
+              setState((){});
+            }),
+      ],
+    ).show();
+  }
+
+  Expanded _buildButton({Color color, String text, BuildContext context}) {
     return Expanded(
       child: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -48,9 +67,7 @@ class _QuizzlerState extends State<Quizzler> {
           color: color,
           onPressed: () {
             if (quizBrain.isFinished()) {
-              setState(() {
-                quizBrain.resetQuiz();
-              });
+              _buildAlertDialog(context);
             } else {
               quizBrain.recordAnswer(quizBrain.isRightAnswer("True" == text));
               setState(() {

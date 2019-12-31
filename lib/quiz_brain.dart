@@ -34,8 +34,7 @@ class QuizBrain {
   ];
 
   void nextQuestion() {
-    if (_currentQuestion < _questions.length - 1)
-    _currentQuestion++;
+    if (_currentQuestion < _questions.length - 1) _currentQuestion++;
   }
 
   String getQuestionText() => _questions[_currentQuestion].mQuestion;
@@ -52,5 +51,5 @@ class QuizBrain {
 
   List<bool> getRecordedAnswer() => _recordedAnswer;
 
-  bool isFinished() => (_currentQuestion >= _questions.length);
+  bool isFinished() => (_currentQuestion >= _questions.length-1);
 }
