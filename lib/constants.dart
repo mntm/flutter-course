@@ -6,7 +6,7 @@ import "package:flutter/material.dart";
 
 const TextStyle kAppLabelTextStyle = TextStyle(
   fontSize: 18.0,
-  color: Color(0xff8d8e98),
+  color: kAppSecondaryTextColor,
 );
 
 const TextStyle kAppNumberTextStyle = TextStyle(
@@ -14,8 +14,8 @@ const TextStyle kAppNumberTextStyle = TextStyle(
   fontWeight: FontWeight.w900
 );
 
-const double kAppBottomBarHeight = 56.0;
-const Color kAppDefaultBottomBarColor = Color(0xffeb1555);
 
+const Color kAppAccentColor = Color(0xffeb1555);
+const Color kAppSecondaryTextColor = Color(0xff8d8e98);
 const Color kAppInactiveCardColor = Color(0xff111328);
 const Color kAppActiveCardColor = Color(0xff1d1e33);
