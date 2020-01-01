@@ -13,8 +13,8 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-  Gender selectedGender;
-  int height = 180;
+  Gender _selectedGender;
+  int _height = 180;
 
   @override
   Widget build(BuildContext context) {
@@ -34,10 +34,10 @@ class _InputPageState extends State<InputPage> {
                     child: ReusableCard(
                       onTap: () {
                         setState(() {
-                          selectedGender = Gender.MALE;
+                          _selectedGender = Gender.MALE;
                         });
                       },
-                      color: (selectedGender == Gender.MALE)
+                      color: (_selectedGender == Gender.MALE)
                           ? kAppActiveCardColor
                           : kAppInactiveCardColor,
                       child: IconContent(
@@ -48,10 +48,10 @@ class _InputPageState extends State<InputPage> {
                     child: ReusableCard(
                       onTap: () {
                         setState(() {
-                          selectedGender = Gender.FEMALE;
+                          _selectedGender = Gender.FEMALE;
                         });
                       },
-                      color: (selectedGender == Gender.FEMALE)
+                      color: (_selectedGender == Gender.FEMALE)
                           ? kAppActiveCardColor
                           : kAppInactiveCardColor,
                       child: IconContent(
@@ -71,10 +71,13 @@ class _InputPageState extends State<InputPage> {
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
+
+                      // In order to align texts on their baseline, one should define 
+                      // both `crossAxisAlignment` and `textBaseline` properties.
                       crossAxisAlignment: CrossAxisAlignment.baseline,
                       textBaseline: TextBaseline.alphabetic,
                       children: <Widget>[
-                        Text(height.toString(), style: kAppNumberTextStyle),
+                        Text(_height.toString(), style: kAppNumberTextStyle),
                         Text('cm', style: kAppLabelTextStyle)
                       ],
                     ),
@@ -88,14 +91,17 @@ class _InputPageState extends State<InputPage> {
                         overlayColor: kAppAccentColor.withAlpha(0x29),
                         overlayShape:
                             RoundSliderOverlayShape(overlayRadius: 28.0),
-                      ),
+                      ),                      
                       child: Slider(
-                        value: height.toDouble(),
+
+                        // the slider itself do not display the changed value. 
+                        // You have to explicitly change its state with a call of setstate
+                        value: _height.toDouble(),
                         min: 120.0,
                         max: 220.0,
                         onChanged: (double val) {
                           setState(() {
-                            height = val.round();
+                            _height = val.round();
                           });
                         },
                       ),
