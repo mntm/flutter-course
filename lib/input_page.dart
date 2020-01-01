@@ -14,7 +14,7 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
   Gender selectedGender;
-  int height=180;
+  int height = 180;
 
   @override
   Widget build(BuildContext context) {
@@ -78,15 +78,27 @@ class _InputPageState extends State<InputPage> {
                         Text('cm', style: kAppLabelTextStyle)
                       ],
                     ),
-                    Slider(
-                      value: height.toDouble(),
-                      min: 120.0,
-                      max: 220.0,
-                      onChanged: (double val) {
-                        setState(() {
-                          height = val.round();
-                        }); 
-                      },
+                    SliderTheme(
+                      data: SliderTheme.of(context).copyWith(
+                        activeTrackColor: Colors.white,
+                        inactiveTrackColor: kAppSecondaryTextColor,
+                        thumbColor: kAppAccentColor,
+                        thumbShape:
+                            RoundSliderThumbShape(enabledThumbRadius: 15.0),
+                        overlayColor: kAppAccentColor.withAlpha(0x29),
+                        overlayShape:
+                            RoundSliderOverlayShape(overlayRadius: 28.0),
+                      ),
+                      child: Slider(
+                        value: height.toDouble(),
+                        min: 120.0,
+                        max: 220.0,
+                        onChanged: (double val) {
+                          setState(() {
+                            height = val.round();
+                          });
+                        },
+                      ),
                     ),
                   ],
                 ),
@@ -105,7 +117,7 @@ class _InputPageState extends State<InputPage> {
               ),
             ),
             Container(
-              color: kAppDefaultBottomBarColor,
+              color: kAppAccentColor,
               margin: EdgeInsets.only(top: 10.0),
               width: double.infinity,
               height: kBottomNavigationBarHeight,
