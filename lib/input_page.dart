@@ -10,10 +10,7 @@ const Color defaultBottomBarColor = Color(0xffeb1555);
 const Color inactiveCardColor = Color(0xff111328);
 const Color activeCardColor = Color(0xff1d1e33);
 
-enum Gender {
-  MALE,
-  FEMALE
-}
+enum Gender { MALE, FEMALE }
 
 class InputPage extends StatefulWidget {
   @override
@@ -21,7 +18,6 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-
   Gender selectedGender;
 
   @override
@@ -36,31 +32,31 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: <Widget>[
                 Expanded(
-                  child: GestureDetector(
-                    onTap: (){
-                      setState((){
+                  child: ReusableCard(
+                    onTap: () {
+                      setState(() {
                         selectedGender = Gender.MALE;
                       });
                     },
-                    child: ReusableCard(
-                      color: (selectedGender == Gender.MALE)?activeCardColor:inactiveCardColor,
-                      child: IconContent(
-                          icon: FontAwesomeIcons.diamond, text: 'MALE'),
-                    ),
+                    color: (selectedGender == Gender.MALE)
+                        ? activeCardColor
+                        : inactiveCardColor,
+                    child: IconContent(
+                        icon: FontAwesomeIcons.diamond, text: 'MALE'),
                   ),
                 ),
                 Expanded(
-                  child: GestureDetector(
-                    onTap: (){
-                      setState((){
+                  child: ReusableCard(
+                    onTap: () {
+                      setState(() {
                         selectedGender = Gender.FEMALE;
                       });
                     },
-                    child: ReusableCard(
-                      color: (selectedGender == Gender.FEMALE)?activeCardColor:inactiveCardColor,
-                      child: IconContent(
-                          icon: FontAwesomeIcons.dollar, text: 'FEMALE'),
-                    ),
+                    color: (selectedGender == Gender.FEMALE)
+                        ? activeCardColor
+                        : inactiveCardColor,
+                    child: IconContent(
+                        icon: FontAwesomeIcons.dollar, text: 'FEMALE'),
                   ),
                 )
               ],
