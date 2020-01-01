@@ -3,12 +3,8 @@ import "package:flutter/material.dart";
 import "reusable_card.dart";
 import "fa_icons.dart";
 import "icon_content.dart";
+import "constants.dart";
 
-const double bottomBarHeight = 56.0;
-const Color defaultBottomBarColor = Color(0xffeb1555);
-
-const Color inactiveCardColor = Color(0xff111328);
-const Color activeCardColor = Color(0xff1d1e33);
 
 enum Gender { MALE, FEMALE }
 
@@ -39,8 +35,8 @@ class _InputPageState extends State<InputPage> {
                       });
                     },
                     color: (selectedGender == Gender.MALE)
-                        ? activeCardColor
-                        : inactiveCardColor,
+                        ? kAppActiveCardColor
+                        : kAppInactiveCardColor,
                     child: IconContent(
                         icon: FontAwesomeIcons.diamond, text: 'MALE'),
                   ),
@@ -53,8 +49,8 @@ class _InputPageState extends State<InputPage> {
                       });
                     },
                     color: (selectedGender == Gender.FEMALE)
-                        ? activeCardColor
-                        : inactiveCardColor,
+                        ? kAppActiveCardColor
+                        : kAppInactiveCardColor,
                     child: IconContent(
                         icon: FontAwesomeIcons.dollar, text: 'FEMALE'),
                   ),
@@ -78,10 +74,10 @@ class _InputPageState extends State<InputPage> {
             ),
           ),
           Container(
-            color: defaultBottomBarColor,
+            color: kAppDefaultBottomBarColor,
             margin: EdgeInsets.only(top: 10.0),
             width: double.infinity,
-            height: bottomBarHeight,
+            height: kAppBottomBarHeight,
           ),
         ],
       ),

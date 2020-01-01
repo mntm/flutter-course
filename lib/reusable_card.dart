@@ -12,7 +12,7 @@ class ReusableCard extends StatelessWidget {
   ReusableCard({
     this.color = ReusableCard.defaultColor,
     this.child,
-    @required this.onTap
+    this.onTap
   });
 
   @override
