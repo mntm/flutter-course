@@ -9,11 +9,23 @@ const TextStyle kAppLabelTextStyle = TextStyle(
   color: kAppSecondaryTextColor,
 );
 
-const TextStyle kAppNumberTextStyle = TextStyle(
-  fontSize: 50.0,
-  fontWeight: FontWeight.w900
-);
+const TextStyle kAppBottomBarTextStyle =
+    TextStyle(fontSize: 18.0, color: Colors.white, fontWeight: FontWeight.bold);
 
+const TextStyle kAppNumberTextStyle =
+    TextStyle(fontSize: 50.0, fontWeight: FontWeight.w900);
+
+const TextStyle kAppTitleTextStyle =
+    TextStyle(fontSize: 50.0, fontWeight: FontWeight.bold);
+
+const TextStyle kAppResultTextStyle = TextStyle(
+    color: Color(0xff24d876), fontSize: 22.0, fontWeight: FontWeight.bold);
+
+const TextStyle kAppBMITextStyle =
+    TextStyle(fontSize: 100.0, fontWeight: FontWeight.bold);
+
+const TextStyle kAppBodyTextStyle =
+    TextStyle(fontSize: 22.0);
 
 const Color kAppAccentColor = Color(0xffeb1555);
 const Color kAppSecondaryTextColor = Color(0xff8d8e98);
