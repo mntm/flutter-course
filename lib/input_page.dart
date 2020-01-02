@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'package:iamrich/round_icon_button.dart';
 
 import "reusable_card.dart";
 import "fa_icons.dart";
@@ -15,6 +16,8 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   Gender _selectedGender;
   int _height = 180;
+  int _weight = 60;
+  int _age = 20;
 
   @override
   Widget build(BuildContext context) {
@@ -72,7 +75,7 @@ class _InputPageState extends State<InputPage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
 
-                      // In order to align texts on their baseline, one should define 
+                      // In order to align texts on their baseline, one should define
                       // both `crossAxisAlignment` and `textBaseline` properties.
                       crossAxisAlignment: CrossAxisAlignment.baseline,
                       textBaseline: TextBaseline.alphabetic,
@@ -91,10 +94,9 @@ class _InputPageState extends State<InputPage> {
                         overlayColor: kAppAccentColor.withAlpha(0x29),
                         overlayShape:
                             RoundSliderOverlayShape(overlayRadius: 28.0),
-                      ),                      
+                      ),
                       child: Slider(
-
-                        // the slider itself do not display the changed value. 
+                        // the slider itself do not display the changed value.
                         // You have to explicitly change its state with a call of setstate
                         value: _height.toDouble(),
                         min: 120.0,
@@ -114,10 +116,66 @@ class _InputPageState extends State<InputPage> {
               child: Row(
                 children: <Widget>[
                   Expanded(
-                    child: ReusableCard(),
+                    child: ReusableCard(
+                      child: Column(
+                        children: <Widget>[
+                          Text('WEIGHT', style: kAppLabelTextStyle),
+                          Text(_weight.toString(), style: kAppNumberTextStyle),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              RoundIconButton(
+                                icon: FontAwesomeIcons.boxed_minus,
+                                onPressed: () {
+                                  setState(() {
+                                    _weight--;
+                                  });
+                                },
+                              ),
+                              SizedBox(width: 10.0),
+                              RoundIconButton(
+                                  icon: FontAwesomeIcons.boxed_plus,
+                                  onPressed: () {
+                                    setState(() {
+                                      _weight++;
+                                    });
+                                  }),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
                   ),
                   Expanded(
-                    child: ReusableCard(),
+                    child: ReusableCard(
+                      child: Column(
+                        children: <Widget>[
+                          Text('AGE', style: kAppLabelTextStyle),
+                          Text(_age.toString(), style: kAppNumberTextStyle),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              RoundIconButton(
+                                icon: FontAwesomeIcons.boxed_minus,
+                                onPressed: () {
+                                  setState(() {
+                                    _age--;
+                                  });
+                                },
+                              ),
+                              SizedBox(width: 10.0),
+                              RoundIconButton(
+                                  icon: FontAwesomeIcons.boxed_plus,
+                                  onPressed: () {
+                                    setState(() {
+                                      _age++;
+                                    });
+                                  }),
+                            ],
+                          )
+                        ],
+                      )
+                    ),
                   )
                 ],
               ),
